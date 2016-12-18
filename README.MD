@@ -22,7 +22,7 @@
 ## Flask-SQLAlchemy
 
 1. Quickstart OK
-2. Introduction into Contexts
+2. Introduction into Contexts OK
 3. Configuration
 4. Declaring Models
 5. Select, Insert, Delete
