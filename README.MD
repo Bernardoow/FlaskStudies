@@ -32,6 +32,6 @@
 ##  Flask-WTF
 
 1. Quickstart OK
-2. Creating Forms
+2. Creating Forms OK
 3. CSRF Protection
 4. Configuration
