@@ -1,7 +1,7 @@
 # Flask Studies
 
 1. Quickstart OK
-2. Tutorial
+2. Tutorial OK
 3. Create a Simple Site
 4. Templates
 5. Testing Flask Applications
