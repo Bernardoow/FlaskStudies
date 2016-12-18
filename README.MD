@@ -16,7 +16,7 @@
 12. The Request Context
 13. Modular Applications with Blueprints
 14. Patterns for Flask
-..* SQLAlchemy in Flask
+..* SQLAlchemy in Flask OK
 ..* Form Validation with WTForms
 
 ## Flask-SQLAlchemy
