@@ -1,4 +1,4 @@
-from flask import Flask, url_for, request
+from flask import Flask, url_for, request, render_template, Markup
 
 app = Flask(__name__)
 
@@ -6,9 +6,10 @@ app = Flask(__name__)
 def index():
     return 'Index Page'
 
-@app.route('/hello')
-def hello():
-    return 'Hello, World'
+@app.route('/hello/')
+@app.route('/hello/<name>')
+def hello(name=None):
+    return render_template('hello.html', name=name)
 
 @app.route('/user/<username>')
 def show_user_profile(username):
@@ -44,7 +45,14 @@ with app.test_request_context():
     print(url_for('login', next='/'))
     print(url_for('profile', username='John Doe'))
 
-url_for('static', filename='style.css')
+# print(url_for('static', filename='style.css'))
+
+print(Markup('<strong>Hello %s!</strong>') % '<blink>hacker</blink>')
+print(Markup(u'<strong>Hello &lt;blink&gt;hacker&lt;/blink&gt;!</strong>'))
+print(Markup.escape('<blink>hacker</blink>'))
+print(Markup(u'&lt;blink&gt;hacker&lt;/blink&gt;'))
+print(Markup('<em>Marked up</em> &raquo; HTML').striptags())
+
 
 if __name__ == "__main__":
     app.run()
