@@ -34,4 +34,4 @@
 1. Quickstart OK
 2. Creating Forms OK
 3. CSRF Protection OK
-4. Configuration
+4. Configuration OK
