@@ -25,6 +25,6 @@
 2. Introduction into Contexts OK
 3. Configuration OK
 4. Declaring Models OK
-5. Select, Insert, Delete
+5. Select, Insert, Delete OK
 6. Multiple Databases with Binds
 7. Signalling Support
