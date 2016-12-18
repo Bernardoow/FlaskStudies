@@ -1,10 +1,18 @@
-from flask import Flask, url_for, request, render_template, Markup
+from flask import Flask, url_for, request, render_template, Markup, make_response, abort, redirect
 from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Index Page'
+    username = request.cookies.get('username')
+    # use cookies.get(key) instead of cookies[key] to not get a
+    # KeyError if the cookie is missing.
+
+    # resp = make_response(render_template(...))
+    # resp.set_cookie('username', 'the username')
+    # return resp
+    return redirect(url_for('login'))
+    # return 'Index Page'
 
 @app.route('/hello/')
 @app.route('/hello/<name>')
@@ -31,16 +39,17 @@ def about():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    error = None
-    if request.method == 'POST':
-        if valid_login(request.form['username'],
-                       request.form['password']):
-            return log_the_user_in(request.form['username'])
-    else:
-        error = 'Invalid username/password'
-    # the code below is executed if the request method
-    # was GET or the credentials were invalid
-    return render_template('login.html', error=error)
+    abort(401)
+    # error = None
+    # if request.method == 'POST':
+    #     if valid_login(request.form['username'],
+    #                    request.form['password']):
+    #         return log_the_user_in(request.form['username'])
+    # else:
+    #     error = 'Invalid username/password'
+    # # the code below is executed if the request method
+    # # was GET or the credentials were invalid
+    # return render_template('login.html', error=error)
 
 # searchword = request.args.get('key', '')
 
@@ -76,6 +85,13 @@ def upload_file():
     if request.method == 'POST':
         f = request.files['the_file']
         f.save('/var/www/uploads/' + secure_filename(f.filename))
+
+
+@app.errorhandler(401)
+def page_not_found(error):
+    resp = make_response(render_template('page_401.html'), 401)
+    resp.headers['X-Something'] = 'A value'
+    return resp
 
 if __name__ == "__main__":
     app.run()
