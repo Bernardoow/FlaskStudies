@@ -35,3 +35,7 @@
 2. Creating Forms OK
 3. CSRF Protection OK
 4. Configuration OK
+
+## WTForms
+
+1. Crash Course OK
