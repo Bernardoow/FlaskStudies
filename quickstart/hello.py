@@ -1,5 +1,5 @@
 from flask import Flask, url_for, request, render_template, Markup
-
+from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 @app.route('/')
@@ -70,6 +70,12 @@ with app.test_request_context('/hello', method='POST'):
 
 # with app.request_context(environ):
 #     assert request.method == 'POST'
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        f = request.files['the_file']
+        f.save('/var/www/uploads/' + secure_filename(f.filename))
 
 if __name__ == "__main__":
     app.run()
