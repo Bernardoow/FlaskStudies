@@ -17,7 +17,7 @@
 13. Modular Applications with Blueprints
 14. Patterns for Flask
 ..* SQLAlchemy in Flask OK
-..* Form Validation with WTForms
+..* Form Validation with WTForms OK
 
 ## Flask-SQLAlchemy
 
@@ -28,3 +28,10 @@
 5. Select, Insert, Delete OK
 6. Multiple Databases with Binds
 7. Signalling Support
+
+##  Flask-WTF
+
+1. Quickstart OK
+2. Creating Forms
+3. CSRF Protection
+4. Configuration
