@@ -1,0 +1,15 @@
+Sistema para cadastros de buscas de empregos para super herois
+
+#1  Cadastrar herois -> Heroi faz o cadastro. Equipe do site avalia se heroi é util;
+
+#2 Página de detalhes do heroi e dos empregos que fez pelo site
+
+#3 Sistema de busca baseado nas caracteristica do heroi.
+
+#4 Usar Flashing Messages
+
+#5 Logging
+
+#6 Usar paginas de erros 401 404 500
+
+#7 FileUpload (Extra points if here has)
